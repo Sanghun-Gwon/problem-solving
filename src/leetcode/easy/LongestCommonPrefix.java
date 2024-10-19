@@ -1,6 +1,25 @@
 package leetcode.easy;
 
+import java.util.Scanner;
+
 public class LongestCommonPrefix {
+
+    public void input(Scanner scanner) {
+
+        System.out.print("입력할 숫자의 갯수 :");
+        int n = scanner.nextInt();
+
+        String[] strs = new String[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print((i+1) + "번째 문자열 : ");
+            strs[i] = scanner.next();
+        }
+
+        System.out.println("result : " + longestCommonPrefix(strs));
+
+    }
+
     public String longestCommonPrefix(String[] strs) {
         if(strs.length==0) return "";
 
