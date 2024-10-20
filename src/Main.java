@@ -41,11 +41,11 @@ public class Main {
                     RemoveDuplicatesFromSortedArray removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray();
                     removeDuplicatesFromSortedArray.input(scanner);
                     break;
-                    case "28":
-                        System.out.println("28. Find the Index of the First Occurrence in a String");
-                        FindTheIndexOfTheFirstOccurrenceInAString findTheIndexOfTheFirstOccurrenceInAString = new FindTheIndexOfTheFirstOccurrenceInAString();
-                        findTheIndexOfTheFirstOccurrenceInAString.input(scanner);
-                        break;
+                case "28":
+                    System.out.println("28. Find the Index of the First Occurrence in a String");
+                    FindTheIndexOfTheFirstOccurrenceInAString findTheIndexOfTheFirstOccurrenceInAString = new FindTheIndexOfTheFirstOccurrenceInAString();
+                    findTheIndexOfTheFirstOccurrenceInAString.input(scanner);
+                    break;
                 case "exit":
                     scanner.close();
                     return;
