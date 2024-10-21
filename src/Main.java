@@ -8,6 +8,7 @@ public class Main {
 
 
         Scanner scanner = new Scanner(System.in);
+        System.out.print("test : ");
         System.out.print("풀고자 하는 문제(종료 원할시 exit) : ");
 
 
