@@ -1,11 +1,25 @@
 package leetcode.easy;
 
+import common.Difficulty;
+import common.LeetCodeProblem;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class TwoSum {
+public class TwoSum implements LeetCodeProblem {
 
-    public void input(Scanner scanner) {
+    @Override
+    public String getName() {
+        return "Two Sum";
+    }
+
+    @Override
+    public Difficulty getDifficulty() {
+        return Difficulty.EASY;
+    }
+
+    @Override
+    public void execute(Scanner scanner) {
 
         System.out.print("입력할 숫자의 갯수 :");
         int n = scanner.nextInt();
@@ -21,6 +35,7 @@ public class TwoSum {
         System.out.println("result : " + Arrays.toString(twoSum(nums, target)));
 
     }
+
 
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];

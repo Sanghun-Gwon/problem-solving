@@ -1,8 +1,28 @@
 package leetcode.easy;
 
+import common.Difficulty;
+import common.LeetCodeProblem;
+
+import java.util.Scanner;
 import java.util.Stack;
 
-public class ValidParentheses {
+public class ValidParentheses implements LeetCodeProblem {
+    @Override
+    public String getName() {
+        return "Two Sum";
+    }
+
+    @Override
+    public Difficulty getDifficulty() {
+        return Difficulty.EASY;
+    }
+
+    @Override
+    public void execute(Scanner scanner) {
+        System.out.println("result : " + this.isValid(scanner.nextLine()));
+    }
+
+
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
 

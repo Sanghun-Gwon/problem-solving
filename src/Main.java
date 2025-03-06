@@ -1,4 +1,5 @@
-import leetcode.easy.*;
+import common.LeetCodeProblem;
+import factory.ProblemFactory;
 
 import java.util.Scanner;
 
@@ -6,52 +7,29 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("\n사용 가능한 문제 번호: " +
+                ProblemFactory.getAvailableProblems());
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("test : ");
-        System.out.print("풀고자 하는 문제(종료 원할시 exit) : ");
-
-
         while (true) {
-            String str = scanner.nextLine();
 
-            switch (str) {
-                case "1":
-                    System.out.println("1. two sum");
-                    TwoSum twoSum = new TwoSum();
-                    twoSum.input(scanner);
-                    break;
-                case "14":
-                    System.out.println("14. longest common prefix");
-                    LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
-                    longestCommonPrefix.input(scanner);
-                    break;
-                case "20":
-                    System.out.println("20. valid parentheses");
-                    ValidParentheses validParentheses = new ValidParentheses();
-                    String s = scanner.nextLine();
-                    System.out.println("result : " + validParentheses.isValid(s));
-                    break;
-                case "21":
-                    System.out.println("21. merge two sorted lists");
-                    MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
-                    mergeTwoSortedLists.input(scanner);
-                    break;
-                case "26":
-                    System.out.println("26. remove duplicates");
-                    RemoveDuplicatesFromSortedArray removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray();
-                    removeDuplicatesFromSortedArray.input(scanner);
-                    break;
-                case "28":
-                    System.out.println("28. Find the Index of the First Occurrence in a String");
-                    FindTheIndexOfTheFirstOccurrenceInAString findTheIndexOfTheFirstOccurrenceInAString = new FindTheIndexOfTheFirstOccurrenceInAString();
-                    findTheIndexOfTheFirstOccurrenceInAString.input(scanner);
-                    break;
-                case "exit":
-                    scanner.close();
-                    return;
-                default:
+            System.out.print("풀고자 하는 문제 번호 입력(종료: exit): ");
+            String input = scanner.nextLine();
+
+            if ("exit".equalsIgnoreCase(input)) {
+                System.out.println("프로그램을 종료합니다.");
+                break;
             }
+
+            LeetCodeProblem problem = ProblemFactory.getProblem(input);
+
+            if (problem == null) {
+                System.out.println("유효하지 않은 문제 번호입니다.");
+                continue;
+            }
+
+            System.out.println("\n" + input + ". " + problem.getName());
+            problem.execute(scanner);
         }
     }
 }
