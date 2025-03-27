@@ -1,11 +1,15 @@
 package factory;
 
+import common.Difficulty;
 import common.LeetCodeProblem;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import leetcode.easy.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
+import leetcode.medium.ReverseInteger;
 
 public class ProblemFactory {
     private static final Map<String, Supplier<LeetCodeProblem>> PROBLEM_MAP = new HashMap<>();
@@ -16,7 +20,7 @@ public class ProblemFactory {
         PROBLEM_MAP.put("20", ValidParentheses::new);
 
         // Medium 문제들도 추가 가능
-        // PROBLEM_MAP.put("3", LongestSubstringWithoutRepeatingCharacters::new);
+        PROBLEM_MAP.put("3", ReverseInteger::new);
 
         // Hard 문제들도 추가 가능
         // PROBLEM_MAP.put("4", MedianOfTwoSortedArrays::new);
@@ -28,6 +32,13 @@ public class ProblemFactory {
             return null;
         }
         return supplier.get();
+    }
+
+    public static Set<String> getAvailableProblemsByDifficulty(Difficulty difficulty) {
+        return PROBLEM_MAP.entrySet().stream()
+            .filter(stringSupplierEntry -> difficulty.equals(stringSupplierEntry.getValue().get().getDifficulty()))
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toSet());
     }
 
     public static Set<String> getAvailableProblems() {
