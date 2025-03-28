@@ -1,8 +1,11 @@
 package leetcode.easy;
 
+import common.Difficulty;
+import common.LeetCodeProblem;
 import java.util.Scanner;
 
-public class MergeTwoSortedLists {
+public class MergeTwoSortedLists implements LeetCodeProblem {
+
 
     public class ListNode {
         int val;
@@ -10,7 +13,20 @@ public class MergeTwoSortedLists {
         ListNode() {}
         ListNode(int val) { this.val = val; }
     }
-    public void input(Scanner scanner) {
+
+
+    @Override
+    public String getName() {
+        return "Find The Index Of The First Occurrence In A String";
+    }
+
+    @Override
+    public Difficulty getDifficulty() {
+        return Difficulty.EASY;
+    }
+
+    @Override
+    public void execute(Scanner scanner) {
 
         ListNode list1 = new ListNode();
         ListNode list2 = new ListNode();
@@ -39,7 +55,7 @@ public class MergeTwoSortedLists {
         }
     }
 
-    public ListNode mergeTwoSortedLists(ListNode list1, ListNode list2) {
+    private ListNode mergeTwoSortedLists(ListNode list1, ListNode list2) {
         ListNode result = new ListNode();
         ListNode cur = result;
         while (list1 != null && list2 != null) {

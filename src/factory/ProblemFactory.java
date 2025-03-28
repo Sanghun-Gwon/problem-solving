@@ -2,7 +2,6 @@ package factory;
 
 import common.Difficulty;
 import common.LeetCodeProblem;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import leetcode.easy.*;
 import java.util.HashMap;
@@ -18,6 +17,10 @@ public class ProblemFactory {
         // Easy 문제들
         PROBLEM_MAP.put("1", TwoSum::new);
         PROBLEM_MAP.put("20", ValidParentheses::new);
+        PROBLEM_MAP.put("14", LongestCommonPrefix::new);
+        PROBLEM_MAP.put("21", MergeTwoSortedLists::new);
+        PROBLEM_MAP.put("28", FindTheIndexOfTheFirstOccurrenceInAString::new);
+
 
         // Medium 문제들도 추가 가능
         PROBLEM_MAP.put("3", ReverseInteger::new);

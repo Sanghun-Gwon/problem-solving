@@ -36,8 +36,7 @@ public class TwoSum implements LeetCodeProblem {
 
     }
 
-
-    public int[] twoSum(int[] nums, int target) {
+    private int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
 
 

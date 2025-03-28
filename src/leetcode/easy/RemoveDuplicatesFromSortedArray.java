@@ -1,9 +1,23 @@
 package leetcode.easy;
 
+import common.Difficulty;
+import common.LeetCodeProblem;
 import java.util.Scanner;
 
-public class RemoveDuplicatesFromSortedArray {
-    public void input(Scanner scanner) {
+public class RemoveDuplicatesFromSortedArray implements LeetCodeProblem {
+
+    @Override
+    public String getName() {
+        return "Find The Index Of The First Occurrence In A String";
+    }
+
+    @Override
+    public Difficulty getDifficulty() {
+        return Difficulty.EASY;
+    }
+
+    @Override
+    public void execute(Scanner scanner) {
 
         System.out.print("입력할 숫자의 갯수 :");
         int n = scanner.nextInt();
@@ -18,8 +32,7 @@ public class RemoveDuplicatesFromSortedArray {
         System.out.println("result : " + removeDuplicates(nums));
     }
 
-
-    public int removeDuplicates(int[] nums) {
+    private int removeDuplicates(int[] nums) {
         int result = nums.length;
         int cur = nums[0];
         int duplicateIndex = 1;

@@ -1,10 +1,23 @@
 package leetcode.easy;
 
+import common.Difficulty;
+import common.LeetCodeProblem;
 import java.util.Scanner;
 
-public class LongestCommonPrefix {
+public class LongestCommonPrefix implements LeetCodeProblem {
 
-    public void input(Scanner scanner) {
+    @Override
+    public String getName() {
+        return "Find The Index Of The First Occurrence In A String";
+    }
+
+    @Override
+    public Difficulty getDifficulty() {
+        return Difficulty.EASY;
+    }
+
+    @Override
+    public void execute(Scanner scanner) {
 
         System.out.print("입력할 숫자의 갯수 :");
         int n = scanner.nextInt();
@@ -17,10 +30,9 @@ public class LongestCommonPrefix {
         }
 
         System.out.println("result : " + longestCommonPrefix(strs));
-
     }
 
-    public String longestCommonPrefix(String[] strs) {
+    private String longestCommonPrefix(String[] strs) {
         if(strs.length==0) return "";
 
         StringBuffer sb = new StringBuffer();
